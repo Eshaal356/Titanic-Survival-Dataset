@@ -54,7 +54,7 @@ This is a comprehensive machine learning dashboard for predicting Titanic passen
    ```
 
 5. **Access the dashboard**
-   - The app will automatically open in your browser
+   - The app will automatically open in a browser
    - Default URL: http://localhost:8501
 
 ## 📖 User Guide
@@ -113,7 +113,7 @@ The dashboard contains 7 main pages accessible via the sidebar:
 - Explanation of prediction reasoning
 
 #### 📄 Download Report
-- Generate comprehensive PDF report
+- Generate a comprehensive PDF report
 - Download cleaned dataset (CSV)
 - Access trained models
 - Export analysis results
@@ -161,29 +161,6 @@ Titanic_internship/
     └── scaler.pkl             # Saved scaler (generated)
 ```
 
-## 🔧 Configuration
-
-### Changing Dataset Path
-
-If your dataset is located elsewhere, update the path in `model_utils.py`:
-
-```python
-@st.cache_data
-def load_data(filepath='path/to/your/dataset.csv'):
-    # ...
-```
-
-### Modifying Models
-
-To add or modify ML models, edit the `train_models()` function in `model_utils.py`:
-
-```python
-models = {
-    'Your Model Name': YourModelClass(parameters),
-    # ...
-}
-```
-
 ### Customizing UI
 
 Edit `assets/style.css` to customize:
@@ -212,55 +189,9 @@ The dashboard trains and compares 4 models:
 streamlit run app.py
 ```
 
-### Cloud Deployment
-
-**Streamlit Cloud:**
-1. Push code to GitHub repository
-2. Connect to Streamlit Cloud
-3. Deploy with one click
-
-**Heroku:**
-```bash
-heroku create your-app-name
-git push heroku main
-```
-
-**Docker:**
-```dockerfile
-FROM python:3.9-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . .
-CMD streamlit run app.py --server.port $PORT
-```
-
-## 🐛 Troubleshooting
-
-### Models not training
-- Ensure dataset is in the correct path
-- Check that all columns are present
-- Verify data quality (no completely missing columns)
-
-### SHAP errors
-- SHAP works best with tree-based models
-- Select Random Forest, XGBoost, or Gradient Boosting
-- Ensure sufficient memory for SHAP calculations
-
-### CSS not loading
-- Verify `assets/style.css` exists
-- Check file path in `load_css()` function
-- Clear browser cache
-
-### Dependencies issues
-```bash
-pip install --upgrade streamlit
-pip install --force-reinstall -r requirements.txt
-```
-
 ## 📝 Credits
 
-**Developer**: Malik Eshaal  
+**Developer**: Eshaal Malik 
 **Title**: Aspiring Data Scientist | ML Enthusiast  
 **Date**: December 2025
 
@@ -278,3 +209,4 @@ This project is created for educational and portfolio purposes.
 ---
 
 **Built with ❤️ for data science excellence**
+
